@@ -18,11 +18,11 @@ for i in range(1,len(datos)):
     sumo+=float(datos[i][9])
     sumg+=float(datos[i][10])
 
-mdna=round(sumn*1000000/(len(datos)-1),2)
-mdeu=round(sume*1000000/(len(datos)-1),2)
-mdjp=round(sumj*1000000/(len(datos)-1),2)
-mdot=round(sumo*1000000/(len(datos)-1),2)
-mdgl=round(sumg*1000000/(len(datos)-1),2)
+mdna=round(sumn/(len(datos)-1),2)
+mdeu=round(sume/(len(datos)-1),2)
+mdjp=round(sumj/(len(datos)-1),2)
+mdot=round(sumo/(len(datos)-1),2)
+mdgl=round(sumg/(len(datos)-1),2)
 print("Medias\nVentas norte américa:",
       mdna,'\n'
       "Ventas europa:",
@@ -39,11 +39,11 @@ print("Medias\nVentas norte américa:",
 dvna = 0; dveu = 0; dvjp = 0; dvot = 0; dvgl = 0;
 
 for i in range(1,len(datos)):
-    dvna=dvna+(((float(datos[i][6])*1000000)-mdna)**2)
-    dveu=dveu+(((float(datos[i][7])*1000000)-mdeu)**2)
-    dvjp=dvjp+(((float(datos[i][8])*1000000)-mdjp)**2)
-    dvot=dvot+(((float(datos[i][9])*1000000)-mdot)**2)
-    dvgl=dvgl+(((float(datos[i][10])*1000000)-mdgl)**2)
+    dvna=dvna+(((float(datos[i][6]))-mdna)**2)
+    dveu=dveu+(((float(datos[i][7]))-mdeu)**2)
+    dvjp=dvjp+(((float(datos[i][8]))-mdjp)**2)
+    dvot=dvot+(((float(datos[i][9]))-mdot)**2)
+    dvgl=dvgl+(((float(datos[i][10]))-mdgl)**2)
 
     
 dvna=(dvna/(len(datos)-1))**1/2; dveu=(dveu/(len(datos)-1))**1/2;
